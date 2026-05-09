@@ -25,7 +25,7 @@ getAllArticles(true).forEach(article => {
     description: article.excerpt,
     content: article.__content,
     author: [{ name: article.author }],
-    date: article.date,
+    date: new Date(article.date),
     image: article.photo,
   });
 });
