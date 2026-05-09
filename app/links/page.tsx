@@ -21,8 +21,8 @@ export default function Links() {
       <div className="space-y-2">
         <p><b>名称</b>：<code>{siteName}</code></p>
         <p><b>简介</b>：{siteDescription}</p>
-        <p><b>URL</b>：<Link href="/">https://nocp.space</Link></p>
-        <p><b>图标</b>：<Link href="https://nocp.space/static/icon.png">https://nocp.space/static/icon.png</Link></p>
+        <p><b>URL</b>：<Link href="/">https://stone.cn.mt</Link></p>
+        <p><b>图标</b>：<Link href="https://stone.cn.mt/static/icon.png">https://stone.cn.mt/static/icon.png</Link></p>
         <p><b>颜色</b>：<span className="bg-theme text-white">#077955</span></p>
       </div>
 

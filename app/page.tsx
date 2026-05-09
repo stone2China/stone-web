@@ -4,11 +4,8 @@ import dynamic from "next/dynamic";
 import { Banner } from "./banner";
 import { TechStacks } from "./tech-stacks";
 import { Agent } from "./agent";
-import { OPanel } from "./opanel";
 import { ProjectsTable } from "./projects-table";
 import { GitalkComments } from "@/components/gitalk-comments";
-
-const Calcium = dynamic(() => import("./calcium"), { ssr: false });
 
 export default function Home() {
   return (
@@ -21,12 +18,6 @@ export default function Home() {
 
       {/* AI Agent Section */}
       <Agent />
-
-      {/* OPanel Section */}
-      <OPanel />
-
-      {/* Calcium Section */}
-      <Calcium />
 
       {/* Projects */}
       <ProjectsTable />

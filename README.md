@@ -1,11 +1,11 @@
-# [nocp.space](https://nocp.space)
+# [stone.cn.mt](https://stone.cn.mt)
 
-This is Norcleeh's Site written in Nextjs + Typescript.
+This is Stone's Site written in Next.js + TypeScript.
 
 ## Deploy
 
 ```bash
-git clone https://github.com/nocpiun/nocp.space.git
+git clone https://github.com/stone2China/stone’web.git
 cd nocp.space
 npm i
 npm run build

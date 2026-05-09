@@ -12,9 +12,9 @@ export function GitalkComments({
     clientID: process.env["NEXT_PUBLIC_GITALK_CLIENT_ID"] ?? "",
     clientSecret: process.env["NEXT_PUBLIC_GITALK_CLIENT_SECRET"] ?? "",
     repo: "nocp.space-comments",
-    owner: "NriotHrreion",
-    admin: ["NriotHrreion"],
-    number: issue
+    owner: "stone2China",
+    admin: ["stone2China"],
+    id: `stone2China-gitalk-${issue}`
   };
   const containerRef = useRef<HTMLDivElement>(null);
 

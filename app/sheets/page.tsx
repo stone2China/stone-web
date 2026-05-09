@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { Page } from "@/components/page";
-import { SheetsTable } from "./sheets-table";
 
 export default function Sheets() {
   return (
-    <Page title="曲谱">
-      <p>作为一个音乐爱好者，我偶尔会用吉他扒一些网上找不到的谱。下面是我所扒出的曲谱，若有纰漏之处，欢迎指正。</p>
-      <p>曲谱排版与渲染使用了<Link href="https://abcjs.net" target="_blank">abc.js</Link>库，出于某些原因，TAB谱的部分指法可能有误，可以参考五线谱自行调整。</p>
+    <Page title="我的歌单">
+      <p>这是我的Apple Music歌单，包含了我喜欢的音乐。</p>
 
-      <SheetsTable />
+      <iframe allow="autoplay *; encrypted-media *;" frameBorder="0" height="450" style={{width:'100%', maxWidth:'660px', overflow:'hidden', background:'transparent'}} sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/cn/playlist/music/pl.u-38oWZplFYmaJMBd"></iframe>
     </Page>
   );
 }
