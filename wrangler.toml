@@ -1,0 +1,14 @@
+name = "stone-web"
+main = "dist/index.js"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "npm run build"
+cwd = "."
+
+[build.upload]
+format = "service-worker"
+
+[[services]]
+binding = "WORKER_SELF_REFERENCE"
+service = "stone-web"
