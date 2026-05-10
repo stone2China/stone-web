@@ -1,165 +1,19 @@
-/** @type {import('next').NextConfig} */
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: false,
+  /* 开启静态导出模式 */
+  output: 'export', 
+  
+  /* 静态导出不支持图片优化功能，必须禁用 */
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "nocp.space",
-        port: "",
-        pathname: "/**"
-      },
-      {
-        protocol: "https",
-        hostname: "github.com",
-        port: "",
-        pathname: "/**"
-      },
-      {
-        protocol: "https",
-        hostname: "avatars.githubusercontent.com",
-        port: "",
-        pathname: "/u/**"
-      },
-      {
-        protocol: "https",
-        hostname: "serinanya.cn",
-        port: "",
-        pathname: "/**"
-      },
-      {
-        protocol: "https",
-        hostname: "yunyoujun.cn",
-        port: "",
-        pathname: "/**"
-      },
-      {
-        protocol: "https",
-        hostname: "blog.liuzhen932.top",
-        port: "",
-        pathname: "/**"
-      },
-      {
-        protocol: "https",
-        hostname: "blog.byteloid.one",
-        port: "",
-        pathname: "/img/**"
-      },
-      {
-        protocol: "https",
-        hostname: "thirdqq.qlogo.cn",
-        port: "",
-        pathname: "/g"
-      },
-      {
-        protocol: "https",
-        hostname: "ttio.cc",
-        port: "",
-        pathname: "/**"
-      },
-      {
-        protocol: "https",
-        hostname: "772123.xyz",
-        port: "",
-        pathname: "/**"
-      },
-      {
-        protocol: "https",
-        hostname: "smite.work",
-        port: "",
-        pathname: "/**"
-      },
-      {
-        protocol: "https",
-        hostname: "casear.net",
-        port: "",
-        pathname: "/static/img/**"
-      },
-      {
-        protocol: "https",
-        hostname: "opanel.cn",
-        port: "",
-        pathname: "/static/**"
-      },
-      {
-        protocol: "https",
-        hostname: "q1.qlogo.cn",
-        port: "",
-        pathname: "/g"
-      },
-      {
-        protocol: "https",
-        hostname: "henlo.cc",
-        port: "",
-        pathname: "/static/**"
-      },
-      {
-        protocol: "https",
-        hostname: "vnyzm.top",
-        port: "",
-        pathname: "/img/**"
-      },
-      {
-        protocol: "https",
-        hostname: "mgrowup.com",
-        port: "",
-        pathname: "/**"
-      },
-      {
-        protocol: "https",
-        hostname: "worable.top",
-        port: "",
-        pathname: "/wp-content/uploads/**"
-      },
-      {
-        protocol: "https",
-        hostname: "nernge.cn",
-        port: "",
-        pathname: "/upload/**"
-      },
-      {
-        protocol: "https",
-        hostname: "blog.liseezn.top",
-        port: "",
-        pathname: "/**"
-      },
-      {
-        protocol: "https",
-        hostname: "limening.vercel.app",
-        port: "",
-        pathname: "/img/base/**"
-      }
-    ]
+    unoptimized: true, 
   },
-  turbopack: {
-    rules: {
-      "*.svg": {
-        loaders: ["@svgr/webpack"],
-        as: "*.js"
-      },
-      "*.abc": {
-        loaders: ["raw-loader"],
-        as: "*.js"
-      }
-    }
-  },
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      loader: "@svgr/webpack",
-    });
-    config.module.rules.push({
-      test: /\.abc$/,
-      loader: "raw-loader"
-    });
 
-    return config;
-  },
-  experimental: {
-    optimizePackageImports: ["lucide-react"],
-  },
+  /* 注意：如果你的仓库名是 stone-web，
+     你需要开启下面这行配置，否则 CSS 和图片会加载失败。
+     如果仓库名已经改成了 stone2-china.github.io，则不需要这行。
+  */
+  // basePath: '/stone-web', 
 };
 
 export default nextConfig;
