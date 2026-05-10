@@ -2,7 +2,7 @@ name: Deploy Next.js to Pages
 
 on:
   push:
-    branches: ["main"] # 当你推送到 main 分支时触发
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -21,13 +21,14 @@ jobs:
           node-version: "20"
           cache: 'npm'
       - name: Install dependencies
-        run: npm install
+        # 关键修改：添加 --legacy-peer-deps 绕过 Cloudflare 插件引发的依赖冲突
+        run: npm install --legacy-peer-deps
       - name: Build with Next.js
         run: npx next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out # Next.js 静态导出的默认文件夹
+          path: ./out
 
   deploy:
     environment:
